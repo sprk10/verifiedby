@@ -1,0 +1,51 @@
+{
+  "name": "verifiedby",
+  "version": "0.1.0",
+  "description": "Independent, offline verifier for RFC 3161 timestamped and digitally signed PDFs. Zero dependencies. The same engine that runs truedoc.eu.",
+  "type": "module",
+  "main": "src/verify-core.mjs",
+  "module": "src/verify-core.mjs",
+  "exports": {
+    ".": "./src/verify-core.mjs"
+  },
+  "types": "src/verify-core.d.ts",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": false,
+  "files": [
+    "src/verify-core.mjs",
+    "src/verify-core.d.ts",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "keywords": [
+    "rfc3161",
+    "timestamp-verification",
+    "document-provenance",
+    "tamper-evident",
+    "pdf",
+    "pdf-signature",
+    "digital-signature",
+    "cades",
+    "pades",
+    "tsa",
+    "webcrypto",
+    "document-verification"
+  ],
+  "author": "SPRK10 B.V. <security@signedby.ai> (https://signedby.ai)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/signedbyai/verifiedby.git"
+  },
+  "homepage": "https://verifiedby.dev",
+  "bugs": {
+    "url": "https://github.com/signedbyai/verifiedby/issues",
+    "email": "security@signedby.ai"
+  }
+}

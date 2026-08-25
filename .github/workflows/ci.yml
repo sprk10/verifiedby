@@ -1,0 +1,40 @@
+# Smoke-tests the package boundary on every push/PR, and sanity-checks that
+# `npm pack` produces the payload we intend (see package.json "files").
+#
+# The behavioural regression suite for the verification engine itself lives
+# in signedbyai/truedoc against real fixture PDFs that aren't redistributable
+# — see test/smoke.mjs for why this workflow doesn't attempt that here.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Smoke test
+        run: node test/smoke.mjs
+
+      - name: Package payload matches what we intend to publish
+        run: |
+          set -euo pipefail
+          npm pack --dry-run 2>&1 | tee /tmp/pack.txt
+          for want in "src/verify-core.mjs" "src/verify-core.d.ts" "README.md" "LICENSE" "NOTICE"; do
+            grep -qF "$want" /tmp/pack.txt || { echo "::error::expected file missing from npm pack: $want"; exit 1; }
+          done

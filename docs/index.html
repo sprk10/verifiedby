@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>verifiedby.dev — embed independent PDF verification</title>
+<meta name="description" content="An independent, offline RFC 3161 / PDF signature verifier as an npm package. Zero dependencies. The same engine that runs truedoc.eu.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://verifiedby.dev">
+<meta property="og:site_name" content="verifiedby">
+<meta property="og:title" content="verifiedby — embed independent PDF verification">
+<meta property="og:description" content="An independent, offline RFC 3161 / PDF signature verifier as an npm package. Zero dependencies. The same engine that runs truedoc.eu.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="verifiedby — embed independent PDF verification">
+<meta name="twitter:description" content="An independent, offline RFC 3161 / PDF signature verifier as an npm package. Zero dependencies. The same engine that runs truedoc.eu.">
+
+<style>
+  :root{--ink:#111827;--muted:#6b7280;--line:#e5e7eb;--bg:#f9fafb;--ok:#047857;--okbg:#ecfdf5;--okline:#a7f3d0;
+        --bad:#b91c1c;--warn:#92400e;--warnbg:#fffbeb;--warnline:#fde68a;
+        --info:#1e40af;--infobg:#eff6ff;--infoline:#bfdbfe}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:40px 20px 80px}
+  h1{font-size:27px;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 22px;font-size:16px}
+  .install{background:#111827;color:#f3f4f6;border-radius:10px;padding:14px 18px;font:14.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;margin:0 0 28px;overflow-x:auto}
+  .install .p{color:#9ca3af;user-select:none}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-bottom:20px}
+  .card h2{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 14px}
+  pre{background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:14px 16px;overflow-x:auto;font-size:13.5px;line-height:1.55;margin:0 0 12px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  p code, li code{background:#eef2f7;padding:1px 5px;border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:0}
+  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+  tr:last-child td{border-bottom:none}
+  .pass{color:var(--ok);font-weight:600}
+  .fail{color:var(--bad);font-weight:600}
+  .neutral{color:var(--muted)}
+  ul.checks{list-style:none;padding:0;margin:0}
+  ul.checks li{padding:6px 0;border-bottom:1px solid var(--line)}
+  ul.checks li:last-child{border-bottom:none}
+  .links{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 28px}
+  .links a{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border:1px solid var(--line);border-radius:8px;color:var(--ink);text-decoration:none;font-size:14.5px;background:#fff}
+  .links a:hover{border-color:#9ca3af}
+  .links a.primary{background:#111827;color:#fff;border-color:#111827}
+  .banner{border-radius:10px;padding:14px 16px;font-size:14px;background:var(--infobg);border:1px solid var(--infoline);color:#1e3a8a;margin:0 0 28px}
+  .foot{margin-top:36px;font-size:13.5px;color:var(--muted)}
+  .foot a{color:#374151}
+  h3{font-size:15px;margin:0 0 6px}
+  .fn{font-size:13px;color:var(--muted);margin:0 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>verifiedby</h1>
+  <p class="sub">An independent, offline verifier for RFC&nbsp;3161 timestamped and digitally signed PDFs — as an npm package you embed in your own app. Zero dependencies.</p>
+
+  <div class="install"><span class="p">$</span> npm install verifiedby</div>
+
+  <div class="banner">
+    This is the exact engine behind <a href="https://truedoc.eu">truedoc.eu</a> — drop a PDF into that page to try it with nothing to install. This package is that same engine, published so you can run the identical check inside your own product.
+  </div>
+
+  <div class="links">
+    <a class="primary" href="https://github.com/signedbyai/verifiedby">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      Source on GitHub
+    </a>
+    <a href="https://www.npmjs.com/package/verifiedby">Package on npm</a>
+    <a href="https://truedoc.eu">Try it — truedoc.eu</a>
+    <a href="https://github.com/signedbyai/truedoc/blob/main/METHODOLOGY.md">Full methodology</a>
+  </div>
+
+  <div class="card">
+    <h2>Quickstart</h2>
+    <pre><code>import { readFileSync } from "node:fs";
+import { verify } from "verifiedby";
+
+const bytes = new Uint8Array(readFileSync("contract.pdf"));
+const result = await verify(bytes);
+
+console.log(result.status);
+// "verified" | "verified-untrusted-root" | "signed-untimed" |
+// "unverified" | "mismatch" | "unsupported" | "no-signature"</code></pre>
+    <p class="fn">Runs entirely on the bytes you pass in and <code>crypto.subtle</code> — no network access, no filesystem access beyond what you give it. Node&nbsp;20+, any modern browser, Deno, or Bun.</p>
+  </div>
+
+  <div class="card">
+    <h2>What it proves</h2>
+    <ul class="checks">
+      <li><strong>Byte-for-byte identity.</strong> The file is identical to what was signed or timestamped. Change one byte and it fails.</li>
+      <li><strong>Signature validity and chain.</strong> The signature over that fact is cryptographically valid, and its certificate chain is intact.</li>
+      <li><strong>Proven vs. claimed time.</strong> Whether the date is proven by a timestamp authority, or merely claimed by the signer's own software — most tools blur these together.</li>
+      <li><strong>How long the proof lasts.</strong> Every certificate expires; the result tells you the date after which the file alone can no longer demonstrate its own validity.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>What it does not prove</h2>
+    <ul class="checks">
+      <li><strong>Who.</strong> A document timestamp records <em>when</em>, never <em>who</em>. An ordinary signature proves which certificate was used — a fact about a key, not a verified fact about a person.</li>
+      <li><strong>That the document is honest.</strong> Nothing here speaks to the sender's identity or the truth of the contents.</li>
+      <li><strong>Revocation.</strong> Checking that needs network access, which this package deliberately does not take.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Status values</h2>
+    <table>
+      <tr><th>Status</th><th>Read as</th></tr>
+      <tr><td><code>verified</code></td><td class="pass">pass</td></tr>
+      <tr><td><code>verified-untrusted-root</code></td><td class="pass">pass — confirm the authority yourself</td></tr>
+      <tr><td><code>signed-untimed</code></td><td class="pass">pass, weaker claim</td></tr>
+      <tr><td><code>no-signature</code></td><td class="neutral">informational</td></tr>
+      <tr><td><code>unsupported</code></td><td class="neutral">limit of the tool, not a finding</td></tr>
+      <tr><td><code>unverified</code></td><td class="fail">fail</td></tr>
+      <tr><td><code>mismatch</code></td><td class="fail">fail</td></tr>
+    </table>
+    <p class="fn" style="margin-top:14px">Only <code>mismatch</code> and <code>unverified</code> are failures of the document. Full rubric — what's checked, in what order, and what would have to be true for each verdict to be wrong — is in <a href="https://github.com/signedbyai/truedoc/blob/main/METHODOLOGY.md">METHODOLOGY.md</a>.</p>
+  </div>
+
+  <div class="card">
+    <h2>API surface</h2>
+    <h3><code>verify(pdfBytes, trustAnchors?)</code></h3>
+    <p class="fn">The main entry point. Returns a promise resolving to a result object — see the full field-by-field reference in the <a href="https://github.com/signedbyai/verifiedby#readme">README</a> and <a href="https://github.com/signedbyai/verifiedby/blob/main/src/verify-core.d.ts">TypeScript declarations</a>.</p>
+    <h3><code>extractSignatures(pdfBytes)</code></h3>
+    <p class="fn">The raw signature dictionaries in a PDF — byte ranges, <code>/Contents</code>, <code>/SubFilter</code> — without running verification.</p>
+    <h3><code>KNOWN_ROOTS</code></h3>
+    <p class="fn">The short, human-checkable list of pinned trust anchors, by public key rather than certificate fingerprint.</p>
+    <h3><code>registerResolver(resolver)</code> / <code>resolveIdentity(result, pdfBytes)</code></h3>
+    <p class="fn" style="margin-bottom:0">Attach your own app's identity claims as clearly separate, display-only information — never merged into the cryptographic result, since proof and "a party's records say" are different kinds of evidence.</p>
+  </div>
+
+  <div class="foot">
+    <p><strong>Who made this.</strong> Built and operated by SPRK10&nbsp;B.V., the company behind <a href="https://signedby.ai">SignedBy</a>. Stated plainly rather than left to be discovered — the reason to run this yourself, from published source, is that you don't have to take our word for what it does.</p>
+    <p>Apache-2.0. Found a file that should fail and instead verifies? Report it privately: <a href="mailto:security@signedby.ai">security@signedby.ai</a>.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+*.tgz
+_to_delete/

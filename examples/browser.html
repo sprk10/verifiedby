@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>verifiedby — browser example</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+  pre { background: #f3f3f3; padding: 1rem; overflow-x: auto; white-space: pre-wrap; }
+  input[type="file"] { margin: 1rem 0; }
+</style>
+</head>
+<body>
+<h1>verifiedby — browser example</h1>
+<p>
+  Drop a signed or timestamped PDF below. Verification runs entirely in
+  this tab — the file is never uploaded anywhere, exactly as at
+  <a href="https://truedoc.eu">truedoc.eu</a>, which runs this same engine.
+</p>
+<input type="file" id="file" accept="application/pdf" />
+<pre id="out">(choose a file)</pre>
+
+<script type="module">
+  // In a real app, install the package and bundle it:
+  //   npm install verifiedby
+  //   import { verify } from "verifiedby";
+  //
+  // This example imports straight from a CDN copy of the same source so the
+  // file works standalone with no build step. Swap the import below for
+  // your bundler's resolution of "verifiedby" once you've installed it.
+  import { verify } from "https://esm.sh/verifiedby";
+
+  const out = document.getElementById("out");
+
+  document.getElementById("file").addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    out.textContent = "verifying…";
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    try {
+      const result = await verify(bytes);
+      out.textContent = JSON.stringify(
+        result,
+        (_key, value) => (value instanceof Uint8Array ? `<${value.length} bytes>` : value),
+        2
+      );
+    } catch (err) {
+      out.textContent = "Could not parse this file: " + err.message;
+    }
+  });
+</script>
+</body>
+</html>
