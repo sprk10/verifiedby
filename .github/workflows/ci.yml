@@ -2,7 +2,7 @@
 # `npm pack` produces the payload we intend (see package.json "files").
 #
 # The behavioural regression suite for the verification engine itself lives
-# in signedbyai/truedoc against real fixture PDFs that aren't redistributable
+# in sprk10/truedoc against real fixture PDFs that aren't redistributable
 # — see test/smoke.mjs for why this workflow doesn't attempt that here.
 
 name: ci

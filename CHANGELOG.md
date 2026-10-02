@@ -2,7 +2,7 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This package tracks the verification engine published in
-[signedbyai/truedoc](https://github.com/signedbyai/truedoc) — see that
+[sprk10/truedoc](https://github.com/sprk10/truedoc) — see that
 repository's own `CHANGELOG.md` for the engine's behavioural history prior
 to this package existing.
 

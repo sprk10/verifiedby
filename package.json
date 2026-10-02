@@ -41,11 +41,11 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/signedbyai/verifiedby.git"
+    "url": "git+https://github.com/sprk10/verifiedby.git"
   },
   "homepage": "https://verifiedby.dev",
   "bugs": {
-    "url": "https://github.com/signedbyai/verifiedby/issues",
+    "url": "https://github.com/sprk10/verifiedby/issues",
     "email": "security@signedby.ai"
   }
 }

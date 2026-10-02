@@ -48,7 +48,7 @@ npm install verifiedby
 
 The full rubric — what's checked, in what order, what each verdict means,
 and what would have to be true for each to be wrong — is published as
-[`METHODOLOGY.md`](https://github.com/signedbyai/truedoc/blob/main/METHODOLOGY.md)
+[`METHODOLOGY.md`](https://github.com/sprk10/truedoc/blob/main/METHODOLOGY.md)
 in the truedoc.eu repository, since this package runs the identical checks.
 
 ---
@@ -208,16 +208,16 @@ package, never dressed up as a finding about your document.
 **[truedoc.eu](https://truedoc.eu)** runs this exact engine as a
 zero-dependency, single-file, offline web page — point end users at it
 directly if you'd rather not build your own UI. Its
-[source](https://github.com/signedbyai/truedoc) is where this engine
+[source](https://github.com/sprk10/truedoc) is where this engine
 actually lives; this package tracks it. Its
-[METHODOLOGY.md](https://github.com/signedbyai/truedoc/blob/main/METHODOLOGY.md)
+[METHODOLOGY.md](https://github.com/sprk10/truedoc/blob/main/METHODOLOGY.md)
 is the full rubric referenced throughout this README.
 
 ## Security
 
 Found a file that should fail and instead verifies? Please report it
 privately first: **security@signedby.ai**. See
-[SECURITY.md](https://github.com/signedbyai/truedoc/blob/main/SECURITY.md)
+[SECURITY.md](https://github.com/sprk10/truedoc/blob/main/SECURITY.md)
 for scope and response times — the same policy covers this package, since
 it's the same engine.
 

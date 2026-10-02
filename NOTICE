@@ -5,7 +5,7 @@ Copyright 2026 SPRK10 B.V.
 This product includes software developed at SPRK10 B.V. (https://sprk10.com),
 the company behind SignedBy (https://signedby.ai). The verification engine
 in src/verify-core.mjs is the same engine that runs at truedoc.eu
-(https://github.com/signedbyai/truedoc).
+(https://github.com/sprk10/truedoc).
 
 Licensed under the Apache License, Version 2.0. See the LICENSE file.
 
